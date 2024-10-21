@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 public enum AudioType { Jump, Walk, Land};
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Death")]
     [SerializeField] private GameObject m_youDiedScreen;
+
+    [Header("Skip")]
+    [SerializeField] private Transform[] m_waypoints;
 
     [Header("SFX")]
     [SerializeField] private AudioSource m_audioSourceWalk;
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private Animator m_anim;
     private Rigidbody2D m_rigidbody;
     private bool m_isFacingRight = true;
+    private int m_currentWaypoint =0;
 
     private string m_planetTag ="Planet";
 
@@ -101,6 +107,21 @@ public class PlayerController : MonoBehaviour
         {
             m_anim.SetBool("jumping", true);
             m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, m_jumpingPower);
+        }
+    }
+
+    public void OnEscape(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+            SceneManager.LoadScene(0); //Loads Menu Scene
+    }
+
+    public void OnSkip(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && m_currentWaypoint<m_waypoints.Length -1)
+        {
+            m_currentWaypoint++;
+            transform.position = m_waypoints[m_currentWaypoint].position;
         }
     }
     #endregion

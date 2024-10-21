@@ -34,6 +34,11 @@ public class OSCSender : MonoBehaviour
                 SendOscMessage("/area1", 0f);
                 SendOscMessage("/area2", 100f);
             }
+            else if (m_area ==2)
+            {
+                SendOscMessage("/area1", 0f);
+                SendOscMessage("/area2", 0f);
+            }
         }
     }
 
@@ -45,7 +50,11 @@ public class OSCSender : MonoBehaviour
         client.Send(address, value);
         Debug.Log($"OSC Message Sent: {address} {value}");
     }
-
+    public void SendOscMessageAfterEsc()
+    {
+        SendOscMessage("/area1", 0f);
+        SendOscMessage("/area2", 0f);
+    }
     void OnDestroy()
     {
         // Close the OSC client when the game object is destroyed

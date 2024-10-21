@@ -216,6 +216,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1c6a9b47-f754-467a-874f-f900a3a4827a
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4948639372400407988}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnEscape
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 321f6be1-f189-44bd-adfc-bac43d37349f
+    m_ActionName: Player/Esc[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4948639372400407988}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnSkip
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 08f4faac-6eba-4182-90b8-5337dc7afe15
+    m_ActionName: Player/Skip[/Keyboard/g]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -243,6 +275,7 @@ MonoBehaviour:
     m_Bits: 64
   m_landingVelocity: -5
   m_youDiedScreen: {fileID: 0}
+  m_waypoints: []
   m_audioSourceWalk: {fileID: 5032516997037358895}
   m_audioSourceJump: {fileID: 851623845956202931}
   m_audioSourceLand: {fileID: 7479727973970926948}
@@ -451,7 +484,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb45c489de719014c8914e68c5e5b4fe, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
